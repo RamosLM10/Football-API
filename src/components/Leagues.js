@@ -29,9 +29,11 @@ const Leagues = () => {
             </a>
             <h1 className='leagues-names'>{data.name}</h1>
           </div>
-       ))}
+        ) 
+      )
+    }
     </div>
-  );
+  )
 
   // return <div className='leagues-container'>
   //   {data.map((dataObj)=> (sites.filter(s => s.id === dataObj.id).map(({ source })=> ( (

@@ -62,14 +62,16 @@ const Standings = () => {
       <MutatingDots color="black" secondaryColor="black" height={80} width={80} /> ) 
       : (
       data.map((data, index) => (
-        <div key={data.team.id} > 
+        <div key={data.team.id} className='standings-info'> 
           <h1>
-            <span>{`${index + 1}.`} 
-              <img className='standings-info' src={data.team.logos[0].href} alt='#'/>
+            <span>{`${index + 1}. `} 
+              {data.team.displayName}
             </span>
-            {data.team.displayName}
+            <img style={{ width: '30px' }} src={data.team.logos[0].href} alt='#'/>
           </h1>
-          {/* <h1>{data.stats[6].value}</h1> */}
+          <h1>{data.stats[6].value} points</h1>
+            <h2>{data.stats[3].value} Games Played - {data.stats[0].value} Wins - {data.stats[1].value} Losses - {data.stats[2].value} Draws</h2>
+            <h2>Goals For - {data.stats[4].value} / Goals Against - {data.stats[5].value}</h2>
         </div>
       ))
     )}
