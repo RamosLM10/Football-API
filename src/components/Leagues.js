@@ -27,7 +27,7 @@ const Leagues = () => {
             <a href={findSource(index)} target='_blank' rel='noreferrer' className='leagues-div'>
               <img src={data.logos.light} alt={data.name} />
             </a>
-            <h1>{data.name}</h1>
+            <h1 className='leagues-names'>{data.name}</h1>
           </div>
        ))}
     </div>

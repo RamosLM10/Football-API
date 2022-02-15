@@ -77,12 +77,51 @@
   text-align: center;
 }
 
+.leagues-names {
+  font-size: 20px;
+}
+
 .leagues-div {
   margin: 20px 0;
 }
 
 .leagues-div > img {
   width: 250px;
+}
+
+@media screen and (max-width: 1085px) {
+ .leagues-names {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 1085px) {
+  .leagues-div > img {
+    width: 80px;
+  }
+}
+
+@media screen and (max-width: 1085px) {
+  .leagues-container {
+    width: auto;
+  }
+}
+
+select {
+  padding: 10px;
+  font-size: 20px;
+}
+
+.standings-results {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.standings-info {
+  width: 30px;
+  margin: 20px 0;
 }
 
 .footer {
