@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import Content from './components/Content';
 import Footer from './components/Footer';
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import * as React from 'react';
 
 function App() {
   return (

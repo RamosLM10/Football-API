@@ -3,7 +3,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
 }
 
 .navbar {
@@ -70,6 +69,7 @@
   height: 50px;
   border-radius: 40px;
   cursor: pointer;
+  overflow-x: hidden;
 }
 
 .leagues-container {
@@ -78,6 +78,7 @@
   grid-template-columns: repeat(5, 1fr);
   justify-items: center;
   text-align: center;
+  overflow-x: hidden;
 }
 
 .leagues-names {
@@ -119,22 +120,32 @@
 select {
   padding: 10px;
   font-size: 20px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.standings-container {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
 }
 
 .standings-results {
-  display: flex;
   align-items: center;
   flex-direction: column;
   text-align: center;
 }
 
 .standings-info {
-  /* width: 30px; */
   margin: 20px 0;
+  /* text-align: center;
+  align-items: center; */
 }
 
 .footer {
-  width: 100%;
+  width: auto;
   height: 5vh;
   background-color: #5DB176;
   color: white;
@@ -144,3 +155,33 @@ select {
   justify-content: center;
 }
 
+/* table */
+
+.paper-container {
+  overflow-x: auto;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 50px;
+  padding: 10px;
+  margin: 0px 0% 30px 0%;
+  width: auto;
+}
+
+tr {
+  height: 40px !important;
+}
+
+th {
+  max-width: 125px;
+  min-width: 125px;
+  padding: 0 !important;
+  overflow-x: auto;
+  white-space: nowrap;
+  text-align: center !important;
+}
+
+td {
+  height: 40px !important;
+  padding: 5px !important;
+  text-align: center !important;
+}

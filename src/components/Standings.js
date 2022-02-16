@@ -2,6 +2,15 @@ import react, { useEffect, useState } from "react";
 import sites from "./Constants";
 import axios from "axios";
 import { MutatingDots } from "react-loader-spinner";
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
+import * as React from 'react';
+
 
 const Standings = () => {
   const [data, setData] = useState([]);
@@ -60,21 +69,48 @@ const Standings = () => {
     <div className="standings-results">
       {loading ? ( 
       <MutatingDots color="black" secondaryColor="black" height={80} width={80} /> ) 
-      : (
-      data.map((data, index) => (
-        <div key={data.team.id} className='standings-info'> 
-          <h1>
-            <span>{`${index + 1}. `} 
-              {data.team.displayName}
-            </span>
-            <img style={{ width: '30px' }} src={data.team.logos[0].href} alt='#'/>
-          </h1>
-          <h1>{data.stats[6].value} points</h1>
-            <h2>{data.stats[3].value} Games Played - {data.stats[0].value} Wins - {data.stats[1].value} Losses - {data.stats[2].value} Draws</h2>
-            <h2>Goals For - {data.stats[4].value} / Goals Against - {data.stats[5].value}</h2>
-        </div>
-      ))
-    )}
+      : 
+        <div className='standings-info'> 
+        <Paper className="paper-container">
+      <Table>
+        <TableHead>
+          <TableRow>
+            <TableCell>Rank</TableCell>
+            <TableCell numeric>Team</TableCell>
+            <TableCell></TableCell>
+            <TableCell>Points</TableCell>
+            <TableCell>Games Played</TableCell>
+            <TableCell>Wins</TableCell>
+            <TableCell>Draws</TableCell>
+            <TableCell>Losses</TableCell>
+            <TableCell>Goals For</TableCell>
+            <TableCell>Goals Against</TableCell>
+            <TableCell>Goal Difference</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {data.map((data, index) => (
+             <TableRow div key={data.team.id}>
+              <TableCell component="th" scope="row">
+                {`${index + 1}.`}
+              </TableCell>
+              <TableCell>{data.team.displayName}</TableCell>
+              <TableCell><img style={{ width: '50px' }} src={data.team.logos[0].href} alt='#'/></TableCell>
+              <TableCell style={{fontWeight: 'bolder'}}>{data.stats[6].value}</TableCell>
+              <TableCell>{data.stats[3].value}</TableCell>
+              <TableCell align="left">{data.stats[0].value}</TableCell>
+              <TableCell>{data.stats[2].value}</TableCell>
+              <TableCell>{data.stats[1].value}</TableCell>
+              <TableCell>{data.stats[4].value}</TableCell>
+              <TableCell>{data.stats[5].value}</TableCell>
+              <TableCell>{data.stats[9].value}</TableCell>
+             </TableRow> 
+        ))}
+        </TableBody>
+      </Table>
+    </Paper>
+      </div>  
+      }
     </div>
   </div>);
 };
@@ -82,3 +118,5 @@ const Standings = () => {
 export default Standings;
 
 
+ 
+// for <Table sx={{ overFlowX:'auto', display:'block', minWidth: '150px'}} size="small" aria-label="a dense table">
