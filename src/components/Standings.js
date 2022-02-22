@@ -85,7 +85,7 @@ const Standings = () => {
               <Tbody>
                 {data.map((data, index) => (
                   <Tr key={data.team.id}>
-                    <Td>{`${index + 1}.`}</Td>
+                    <Td>{`${index + 1}`}</Td>
                     <Td>{data.team.displayName}</Td>
                     <Td><img style={{ width: '50px' }} src={data.team.logos[0].href} alt='#'/></Td>
                     <Td style={{fontWeight: 'bolder'}}>{data.stats[6].value}</Td>
