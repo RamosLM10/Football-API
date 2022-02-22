@@ -135,14 +135,11 @@ select {
 
 .standings-results {
   align-items: center;
-  /* flex-direction: column; */
   text-align: center;
 }
 
 .standings-info {
   margin: 20px 0;
-  /* text-align: center;
-  align-items: center; */
 }
 
 .footer {
@@ -160,4 +157,6 @@ select {
 
 Th {
   padding: 20px;
+  border-bottom: 1px solid black;
 }
+

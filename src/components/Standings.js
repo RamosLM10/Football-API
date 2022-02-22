@@ -66,7 +66,7 @@ const Standings = () => {
       <MutatingDots color="black" secondaryColor="black" height={80} width={80} /> ) 
       : 
         <div className='standings-info'>
-          <Table >
+          <Table>
             <Thead>
               <Tr>
                 <Th>Rank</Th>
@@ -100,44 +100,6 @@ const Standings = () => {
                 ))}
               </Tbody>
             </Table>
-        {/* <Paper className="paper-container">
-      <Table>
-        <TableHead>
-          <TableRow>
-            <TableCell>Rank</TableCell>
-            <TableCell>Team</TableCell>
-            <TableCell></TableCell>
-            <TableCell>Points</TableCell>
-            <TableCell>Games Played</TableCell>
-            <TableCell>Wins</TableCell>
-            <TableCell>Draws</TableCell>
-            <TableCell>Losses</TableCell>
-            <TableCell>Goals For</TableCell>
-            <TableCell>Goals Against</TableCell>
-            <TableCell>Goal Difference</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {data.map((data, index) => (
-             <TableRow div key={data.team.id}>
-              <TableCell component="th" scope="row">
-                {`${index + 1}.`}
-              </TableCell>
-              <TableCell>{data.team.displayName}</TableCell>
-              <TableCell><img style={{ width: '50px' }} src={data.team.logos[0].href} alt='#'/></TableCell>
-              <TableCell style={{fontWeight: 'bolder'}}>{data.stats[6].value}</TableCell>
-              <TableCell>{data.stats[3].value}</TableCell>
-              <TableCell align="left">{data.stats[0].value}</TableCell>
-              <TableCell>{data.stats[2].value}</TableCell>
-              <TableCell>{data.stats[1].value}</TableCell>
-              <TableCell>{data.stats[4].value}</TableCell>
-              <TableCell>{data.stats[5].value}</TableCell>
-              <TableCell>{data.stats[9].value}</TableCell>
-             </TableRow> 
-        ))}
-        </TableBody>
-      </Table>
-    </Paper> */}
       </div>  
       }
     </div>
