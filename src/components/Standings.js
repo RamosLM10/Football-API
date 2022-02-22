@@ -2,14 +2,9 @@ import react, { useEffect, useState } from "react";
 import sites from "./Constants";
 import axios from "axios";
 import { MutatingDots } from "react-loader-spinner";
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
-import * as React from 'react';
+import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table';
+import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css';
+
 
 
 const Standings = () => {
@@ -70,13 +65,47 @@ const Standings = () => {
       {loading ? ( 
       <MutatingDots color="black" secondaryColor="black" height={80} width={80} /> ) 
       : 
-        <div className='standings-info'> 
-        <Paper className="paper-container">
+        <div className='standings-info'>
+          <Table >
+            <Thead>
+              <Tr>
+                <Th>Rank</Th>
+                <Th>Team</Th>
+                <Th></Th>
+                <Th>Points</Th>
+                <Th>Games Played</Th>
+                <Th>Wins</Th>
+                <Th>Draws</Th>
+                <Th>Losses</Th>
+                <Th>Goals For</Th>
+                <Th>Goals Against</Th>
+                <Th>Goal Difference</Th>
+              </Tr>
+            </Thead>
+              <Tbody>
+                {data.map((data, index) => (
+                  <Tr key={data.team.id}>
+                    <Td>{`${index + 1}.`}</Td>
+                    <Td>{data.team.displayName}</Td>
+                    <Td><img style={{ width: '50px' }} src={data.team.logos[0].href} alt='#'/></Td>
+                    <Td style={{fontWeight: 'bolder'}}>{data.stats[6].value}</Td>
+                    <Td>{data.stats[3].value}</Td>
+                    <Td>{data.stats[0].value}</Td>
+                    <Td>{data.stats[2].value}</Td>
+                    <Td>{data.stats[1].value}</Td>
+                    <Td>{data.stats[4].value}</Td>
+                    <Td>{data.stats[5].value}</Td>
+                    <Td>{data.stats[9].value}</Td>
+                   </Tr> 
+                ))}
+              </Tbody>
+            </Table>
+        {/* <Paper className="paper-container">
       <Table>
         <TableHead>
           <TableRow>
             <TableCell>Rank</TableCell>
-            <TableCell numeric>Team</TableCell>
+            <TableCell>Team</TableCell>
             <TableCell></TableCell>
             <TableCell>Points</TableCell>
             <TableCell>Games Played</TableCell>
@@ -108,7 +137,7 @@ const Standings = () => {
         ))}
         </TableBody>
       </Table>
-    </Paper>
+    </Paper> */}
       </div>  
       }
     </div>
@@ -119,4 +148,3 @@ export default Standings;
 
 
  
-// for <Table sx={{ overFlowX:'auto', display:'block', minWidth: '150px'}} size="small" aria-label="a dense table">
